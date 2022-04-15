@@ -44,7 +44,7 @@ function setup() {
 
 	loadImage('teste.png', img => {
 		//image(img, width/2 - 10, height/2 - 10, 25, 37);
-		image(img, W/2, H/2, 1000, 1750);
+		image(img, 0, 0, 1000, 1750);
 	  });
 
 	input = createInput();
@@ -71,7 +71,7 @@ function setup() {
 }
 
 function draw(){
-	background(0, 0, 0, 0);
+	background(0);
 	fill("#3cb0dc")
 	strokeWeight(0);
 	textSize(30);
