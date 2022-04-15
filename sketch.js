@@ -13,7 +13,7 @@ let input, button, resetButton;
 let img;
 
 function preload() {
-  img = loadImage('Capture_ccexpress.png');
+  img = loadImage('teste.png');
 }
 
 function setup() {
@@ -42,9 +42,9 @@ function setup() {
 	body[3].vy = 1.2;
 	body[4].vy = 0.54;
 
-	loadImage('Capture_ccexpress.png', img => {
+	loadImage('teste.png', img => {
 		//image(img, width/2 - 10, height/2 - 10, 25, 37);
-		image(img, 0, 0, 1000, 1750);
+		image(img, W/2, H/2, 1000, 1750);
 	  });
 
 	input = createInput();
