@@ -71,7 +71,7 @@ function setup() {
 }
 
 function draw(){
-	background(0);
+	background(0, 0, 0, 60);
 	fill("#3cb0dc")
 	strokeWeight(0);
 	textSize(30);
