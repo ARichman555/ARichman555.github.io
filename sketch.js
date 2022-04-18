@@ -48,7 +48,6 @@ function setup() {
 	  });
 
 	input = createInput();
-	input.input(changeMass);
 	input.position(width-400, 500);
 	input.style("background-color: #000000");
 	input.style("color: #3cb0dc");
@@ -159,4 +158,10 @@ function reset() {
 	input.hide();
 	input.value('');
 	button.hide();
+}
+
+function keyPressed() {
+	if (keyCode === ENTER || keyCode === RETURN) {
+		changeMass();
+	}
 }
