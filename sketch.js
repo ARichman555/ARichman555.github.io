@@ -48,6 +48,7 @@ function setup() {
 	  });
 
 	input = createInput();
+	input.input(changeMass);
 	input.position(width-400, 500);
 	input.style("background-color: #000000");
 	input.style("color: #3cb0dc");
