@@ -11,6 +11,8 @@ var textMars = "This is Mars, or otherwise known as the \nRed Planet! Although i
 var textHeight = [350, 525, 450, 450, 500];
 let input, button, resetButton;
 let img;
+var loadingImage = false
+var time = 0
 
 function preload() {
   img = loadImage('Capture_ccexpress.png');
@@ -41,11 +43,6 @@ function setup() {
 	body[2].vy = .8;
 	body[3].vy = 1.2;
 	body[4].vy = 0.54;
-
-	loadImage('Capture_ccexpress.png', img => {
-		//image(img, width/2 - 10, height/2 - 10, 25, 37);
-		image(img, 0, 0, 1000, 1750);
-	  });
 
 	input = createInput();
 	input.position(width-400, 500);
@@ -95,6 +92,17 @@ function draw(){
 	for(var i = 0; i < n; i++){
 		body[i].update();
 	}
+
+	if (loadingImage && time < 75) {
+		loadImage('Capture_ccexpress.png', img => {
+			//image(img, width/2 - 10, height/2 - 10, 25, 37);
+			image(img, 0, 0, 1000, 1750);
+		  });
+		time++;
+	} else {
+		time = 0;
+		loadingImage = false;
+	}
 }
 
 function mouseClicked() {
@@ -128,6 +136,13 @@ function changeMass() {
 		if (body[i].boxDisplay) {
 			if (mass != '' && Number(mass) == mass)
 				body[i].updateMass(input.value());
+			else if (mass.toLowerCase() == 'testudo') {
+				loadingImage = true
+				loadImage('Capture_ccexpress.png', img => {
+					//image(img, width/2 - 10, height/2 - 10, 25, 37);
+					image(img, 0, 0, 1000, 1750);
+			  	});
+			}
 		}
 	}
 
